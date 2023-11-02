@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# Check if at least one argument is provided
+if [ -z "$1" ]; then
+    echo "Usage: cscript <source_file.c> [gcc flags]"
+    exit 1
+fi
+
+# Extract the source file
+source_file=$1
+shift  # Shift the arguments so that $@ contains only additional gcc flags
+
+# Extract the filename without the extension for the output file
+filename=$(basename -- "$source_file")
+filename="${filename%.*}"
+
+# Compile the C program with any additional flags provided
+gcc "$source_file" -o "/tmp/${filename}" "$@"
+
+# Check if gcc succeeded
+if [ $? -ne 0 ]; then
+    echo "Compilation failed."
+    exit 1
+fi
+
+# Run the compiled program
+"/tmp/${filename}"
+status=$?
+
+# Clean up: Remove the compiled program
+rm "/tmp/${filename}"
+
+# Exit with the status of the program execution
+exit $status
+
