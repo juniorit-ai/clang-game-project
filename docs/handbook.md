@@ -50,13 +50,17 @@
 
 21. Do I need to use semicolons in the end of each line in C?
 
-22. What is the syntax of an if-else logic statement in the C programming language?
+22. Does C have a boolean data type, and how do you represent true or false in C?
 
-23. What is the syntax of a while loop statement in the C programming language?
+23. What is the syntax of an if condition statement in the C programming language? Please give some examples?
 
-24. Why does a PHP script start with `<?php`?
+24. What is the syntax of an if-else condition statement in the C programming language?
 
-25. Please compare the syntax of C and PHP; what are the differences?
+25. What is the syntax of a while loop statement in the C programming language?
+
+26. Why does a PHP script start with `<?php`?
+
+27. Please compare the syntax of C and PHP; what are the differences?
 
 
 ## Exploring Various Comment Types and Their Syntax:
@@ -109,6 +113,11 @@ Starts with /*+ and ends with +*/, AI will ignore these comments automatically.
   Once the code finished, please run shell command "jcscript discount-calculator.c" in the playground directory to test your code.
 +*/
 
+// TODO: You can ask AI to write code for you here
+
+/*
+   TODO: You can ask AI to write code for you here
+*/
 ```
 ### Section 3 : JuniorIt VS Code Extension Comments :
 
@@ -126,7 +135,29 @@ int main() {
 
 ## Basic coding concepts in C:
 
-### Section 1 : Making Decisions with If-Else Statements 
+### Section 1 : Making Decisions with If or If-Else Statements 
+
+```c
+/*
+   Originally C does not have a boolean data type, and normally uses integers for boolean testing. 
+   Zero is used to represent false 
+   One is used to represent true. 
+   For interpretation, Zero is interpreted as false and anything non-zero is interpreted as true
+*/
+
+int condition = 0; // represent false
+int condition = 1; // represent true
+
+int condition = 9; // anything non-zero is interpreted as true
+
+int condition = 3 < 9; // the value of condition is 1; true
+int condition = 3 > 9; // the value of condition is 0; false
+
+
+if (condition) {
+    // Code to be executed if the condition is true
+}
+```
 
 ```c
 if (condition) {
@@ -140,6 +171,11 @@ if (condition) {
 
 ```c
 int y = 3;
+
+if(y) {
+    printf("y is 5,  anything non-zero is interpreted as true\n");
+}
+
 if (y > 5) {
     printf("y is greater than 5\n");
 } else {
@@ -160,6 +196,6 @@ while (condition) {
 int count = 0;
 while (count < 5) {
     printf("Count: %d\n", count);
-    count++;
+    count++; // shorter for count = count + 1
 }
 ```
