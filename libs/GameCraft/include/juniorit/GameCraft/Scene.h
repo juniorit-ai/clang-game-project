@@ -16,6 +16,7 @@ typedef struct Scene {
     
     void (*add_child)(struct Scene* thiz, Sprite* sprite);
     void (*remove_child)(struct Scene* thiz, Sprite* sprite);
+    // ticks - Time elapsed per frame in milliseconds
     void (*onUpdate)(struct Scene* thiz, int ticks);
     void (*onDraw)(struct Scene* thiz);
     void (*onKeyboard)(struct Scene* thiz, Event event, int keyCode);

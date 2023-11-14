@@ -46,6 +46,7 @@ typedef struct Sprite {
     void (*setCener)(struct Sprite* thiz, Point point);
     void (*setFlip)(struct Sprite* thiz, FlipMode Mode);
     void (*setFrame)(struct Sprite* thiz, int frame);
+    // ticks - Time elapsed per frame in milliseconds
     void (*onUpdate)(struct Sprite* thiz, int ticks);
     void (*onDraw)(struct Sprite* thiz);
     void (*onKeyboard)(struct Sprite* thiz, Event event, int keyCode);

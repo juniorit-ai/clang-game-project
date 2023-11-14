@@ -6,8 +6,9 @@
 #include <stdio.h>
 #include <math.h>
 
-Sprite *sprite = NULL;
+static Sprite *sprite = NULL;
 
+// ticks - Time elapsed per frame in milliseconds
 void first_scene_on_update(FirstScene *thiz, int ticks)
 {
     scene_on_update((Scene *)thiz, ticks);
@@ -19,7 +20,8 @@ void first_scene_on_update(FirstScene *thiz, int ticks)
     timeLapse += ticks;
 
     // Oscillate scale between 1 and 1.0.1
-    float scale = 1 + 0.01 * fabs(sin(timeLapse / 1000.0 * M_PI));
+    float frequency = M_PI / 1000;
+    float scale = 1 + 0.01 * sin(timeLapse * frequency);
 
     sprite->setScale(sprite, scale);
 
