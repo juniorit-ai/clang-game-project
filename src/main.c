@@ -4,11 +4,14 @@
 
 int main(int argc, char *argv[])
 {
-    printf("Start ...\n");
+    int width = 1280;
+    int height = 512;
+
+    printf("T-Rex game starts; Scene width: %i, height: %i.\n", width, height);
 
     Game* game = game_instance();
-    
-    game->init(game, 1280, 512);
+
+    game->init(game, width, height);
 
     Scene* scene = (Scene*)new_first_scene();
 
