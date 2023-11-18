@@ -30,7 +30,7 @@ make run
 5. Once you are satisfied with your project, deploy your generated website code to your project's GitHub webpage, and submit your project for review with the command below:
 
     **How to publish your GitHub repository as a static website:**
-    
+
     https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
 
 
@@ -45,7 +45,7 @@ juniorit submit
 
 ```
 
-6. Share your game with your friends, family and Our Discord server.
+6. Share your game with your friends, family and in our Discord server.
 
 
 ## License
