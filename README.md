@@ -6,7 +6,9 @@
 2. You can use these images directly in your project, or you can generate game sprites or backgrounds using the slash commands in our Discord server's #ai-sprites channel as follows:
 
     `/txt2img`: Use this command with a prompt to ask the AI to generate images for a game sprite or background.
+
     `/img2img`: Use a reference image along with a prompt to request the AI to create an image for a game sprite or background.
+    
     `/inpaint`: Update the reference image using a prompt and a mask. (Use the mask image to paint only the white area in the reference image.)
 
     Note: 
