@@ -1,4 +1,4 @@
-# C language game project development
+# Learn the C language by developing your own game
 
 ### Project requirements - Session 1
 
