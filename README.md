@@ -22,6 +22,9 @@
 * The game is for linux terminal console.
 * Please do it just with gcc and without any third party libraries. 
 
+1. Fork https://github.com/juniorit-ai/gamecraft-clang.git
+2. settings
+3. select pages
 
 ## License
 
