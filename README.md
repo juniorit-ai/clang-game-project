@@ -1,6 +1,6 @@
 # Learn the C language by developing your own game
 
-### Project requirements - Session 1
+### Session 1: Project requirements
 
 1. JuniorIT.AI has prepared AI-generated background and sprite images for you at https://d2sdz7s4ni6kmi.cloudfront.net/juniorit/game-image-template.zip
 2. You can use these images directly in your project, or you can generate game sprites or backgrounds using the slash commands in our Discord server's #ai-sprites channel as follows:
