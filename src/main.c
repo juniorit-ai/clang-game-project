@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
     int width = 1280;
     int height = 512;
 
-    printf("T-Rex game starts; Scene width: %i, height: %i.\n", width, height);
+    printf("Game starts; Scene width: %i, height: %i.\n", width, height);
 
     // game_instance() alway returns the same game instance. If it does not exist the game_instance() will create a new one  - singleton design pattern
     Game* game = game_instance();

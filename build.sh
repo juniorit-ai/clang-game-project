@@ -45,6 +45,10 @@ case $1 in
         echo "Your game has been deployed to $get_github_pages_url, and you can share with your friends now."
         exit 0
         ;;
+    "submit")
+        juniorit submit
+        exit 0
+        ;;
     *)
         # for the rest
         ;;

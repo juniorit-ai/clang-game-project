@@ -48,8 +48,8 @@ int main()
     mySprite1.y = 10; // Starting y-coordinate
     mySprite1.scale = 1.5; // Starting scale
 
-    const char *filename1 = "sprite1.png";
-    strcpy(mySprite1.image, filename1); // Copy image filename to sprite
+    const char *filename = "character sprite for demo only";
+    strcpy(mySprite1.image, filename); // Copy image filename to sprite
 
     // Pointer to Sprite
     Sprite *sprite1;
