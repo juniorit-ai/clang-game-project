@@ -31,7 +31,7 @@ make run
 
     **How to publish your GitHub repository as a static website:**
 
-    https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
+    [https://www.youtube.com/watch?v=8EQ2dIGIBQY](https://www.youtube.com/watch?v=8EQ2dIGIBQY)
 
 
 ```bash
