@@ -71,6 +71,9 @@ void first_scene_init(FirstScene *thiz)
     // Add the created sprite as a child to the scene.
     // This step integrates the sprite into the scene so it can be rendered and managed.
     scene->add_child(scene, sprite);
+
+    // Set the sprite's top-left coordinate.
+    sprite->setPosition(sprite, 100, 200);
 }
 
 // destroy the FirstScene object, you can ingore the code for now

@@ -14,4 +14,4 @@ run:
 	./build.sh web
 
 deploy:
-   ./build.sh deploy
+	./build.sh deploy
