@@ -41,10 +41,10 @@ case $1 in
         git add .
         git commit -a -m "deploy at $(date)"
         git push
-        cd -
         echo
         echo "Your game has been deployed to `get_github_pages_url`, and you can share with your friends now."
         echo
+        cd -
         exit 0
         ;;
     "submit")
