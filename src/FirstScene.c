@@ -17,9 +17,6 @@ void first_scene_on_update(FirstScene *thiz, int ticks)
     // Casting 'thiz' from 'FirstScene*' to 'Scene*' changes the pointer type to the parent type.
     scene_on_update((Scene *)thiz, ticks);
 
-    // If 'sprite' is NULL, it will cause the game to crash, so we return early in this case.
-    if(sprite == NULL) return;
-
     // The static keyword here ensures that 'timeLapse' is initialized by the compiler only once.
     // As a result, 'timeLapse' will not be reset to 0 on subsequent calls to this function.
     static int timeLapse = 0;
@@ -42,7 +39,6 @@ void first_scene_on_keyboard(FirstScene *thiz, Event event, int keyCode)
 {
     scene_on_keyboard((Scene *)thiz, event, keyCode);
 
-    if(sprite == NULL) return;
 }
 
 // handle he mouse event of the scene, you can ingore the code for now
@@ -50,7 +46,6 @@ void first_scene_on_mouse(FirstScene *thiz, Event event, Point point)
 {
     scene_on_mouse((Scene *)thiz, event, point);
 
-    if(sprite == NULL) return;
 }
 
 // Initialize the first scene by adding a sprite/image to it.
