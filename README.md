@@ -39,6 +39,7 @@ make run
 # Your game website's update may be avaiable in several minutes after the deployment.
 make deploy
 
+# Submit your project for review will automatically deploy your game to GitHub Page.
 make submit
 or 
 juniorit submit

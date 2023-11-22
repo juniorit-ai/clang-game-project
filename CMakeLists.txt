@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.10)
 
 project(MyGame)
 
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g -gsource-map -Wno-unused-command-line-argument -Wno-limited-postlink-optimizations -s -O3 -s USE_SDL=2 -s USE_SDL_IMAGE=2 -s SDL2_IMAGE_FORMATS=['png'] --preload-file ../res@res")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g -gsource-map -Wno-unused-command-line-argument -Wno-limited-postlink-optimizations -s -O3 -s USE_SDL=2 -s USE_SDL_IMAGE=2 -s SDL2_IMAGE_FORMATS=['png','jpg'] --preload-file ../res@res")
 
 set(CMAKE_EXECUTABLE_SUFFIX ".js")
 
