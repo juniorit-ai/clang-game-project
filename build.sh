@@ -36,7 +36,7 @@ case $1 in
         exit 0
         ;;
     "deploy")
-        cp -f web/* "$GAMECRAFT_PROJECT_PATH/web/"
+        cp -f web/* "$GAMECRAFT_PROJECT_PATH/clang/"
         cd $GAMECRAFT_PROJECT_PATH
         git add .
         git commit -a -m "deploy at $(date)"
