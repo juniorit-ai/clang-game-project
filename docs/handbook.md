@@ -93,9 +93,9 @@ make
 ```markdown {type: code}
 make run
 ```
-### Section 4 :
+### Section 4 : Basic Linux Shell Commands
 
-Here are some Basic Linux shell commands,
+Here are some Basic Linux shell commands.
 
 1. **pwd**: 
    - Stands for 'print working directory'.
@@ -151,10 +151,10 @@ Here are some Basic Linux shell commands,
 
 7. **echo**: 
    - **echo** is used to display text or variables to the terminal or to redirect it to a file
-   - The >> operator is used to append the output of echo to an existing file (output.txt).
+   - The > operator is used for output redirection.If the specified file exists, it will be overwritten with the new output. If the file does not exist, a new file will be created.
 
    ```bash
-   echo "Additional content" >> output.txt
+   echo "Additional content" > output.txt
    ```
 8. **gcc**: 
    - The `gcc` command is a compiler used in Unix-like operating systems, including Linux, to compile and link C programs.
@@ -165,5 +165,13 @@ Here are some Basic Linux shell commands,
    gcc source_file -o output_file
    ```
 
+9. **grep**:
+   - `grep`: This is the command itself, used for searching text patterns.
+   - `r`: This option recursively search subdirectories. This means it will search for the specified pattern not only in the current directory (src) but also in all its subdirectories.
+   - `n`: Print line numbers along with the lines containing the matched pattern. 
+
+   ```bash
+   grep -rn "text to search" src
+   ```
 
 
