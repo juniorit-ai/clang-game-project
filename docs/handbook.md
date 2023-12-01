@@ -1,69 +1,23 @@
-## In this Session, Students Should Master the Following AI Prompts:
+## In this Session, Students Should Focus on the following Concepts/AI prompts to learn more.
 
-### Section - 1 : Let's explore some basic game technologies with AI. 
+### Linux Basic Bash commands
 
-1. What is the game frame rate, and why is it important?
+1.  I am new to Linux. Can you provide some basic Linux shell commands for practice?
+2.  How can I list the files in a directory by their creation time using a Linux shell command?
+3.  What is the purpose of the 'touch' command in Linux shell?
+4.  How can I forcibly remove a directory using a Linux shell command?
 
-2. What is a sprite in game development?
+### Learn some basic coding knowledge. 
 
-3. How do you make the game background move to create the illusion of a sprite running infinitely?
+5.  Please write a "Hello, World!" application in C?
+6.  Does my program need the main function in C, and what is its purpose?
+7.  How do I write single-line comments in C?
+8.  How do I write multi-line comments in C?
+9.  Does whitespace matter in C?
+10. Do I need curly braces in C, and what is their purpose if they are needed?
+11. Do I need to use semicolons in the end of each line in C?
 
-4. Why can learning game development help developers gain a deeper understanding of coding and computer technologies?
-
-### Section - 2 :  Why we start by learning C as our first coding language.
-
-5. Please give me a brief history of the C language.
-
-6. Which type of project is best suited for C as its coding language?
-
-7. Please compare the C language with other popular coding languages.
-
-8. Why can I learn other languages easily once I have learned the C language?
-
-### Section - 3 : Set up your Linux development environment instantly.
-
-9. What is github.com, and why is it important to developers?
-
-10. What is VS Code, and what are VS Code extensions used for?
-
-11. What is GitHub Codespaces? Can I use it for free?
-
-12. I am new to Linux. Can you provide some basic Linux shell commands for practice?
-
-13. What is 'sudo' in Linux commands, and how do I use it?
-
-### Section - 4 : Discover the basic coding concepts
-
-14. What is the purpose of the "Hello, World!" program in a coding language?
-
-15. Please write a "Hello, World!" application in C?
-
-16. Does my program need the main function in C, and what is its purpose?
-
-17. How do I write single-line comments in C?
-
-18. How do I write multi-line comments in C?
-
-19. Does whitespace matter in C?
-
-20. Do I need curly braces in C, and what is their purpose if they are needed?
-
-21. Do I need to use semicolons in the end of each line in C?
-
-22. Does C have a boolean data type, and how do you represent true or false in C?
-
-23. What is the syntax of an if condition statement in the C programming language? Please give some examples?
-
-24. What is the syntax of an if-else condition statement in the C programming language?
-
-25. What is the syntax of a while loop statement in the C programming language?
-
-26. Why does a PHP script start with `<?php`?
-
-27. Please compare the syntax of C and PHP; what are the differences?
-
-
-## Exploring Various Comment Types and Their Syntax:
+## Basic Coding Concepts in C
 
 ### Section 1 : Comments in C
 
@@ -119,83 +73,105 @@ Starts with /*+ and ends with +*/, AI will ignore these comments automatically.
    TODO: You can ask AI to write code for you here
 */
 ```
-### Section 3 : JuniorIt VS Code Extension Comments :
 
-You can add a comment in your code file like this: // TODO: Fix the code error. Then, press Ctrl+Enter. The AI will help you complete the code.
+### Section 3 : `make` command
 
-```c
-// TODO: fix the code error
-#include <stdio.h>
+The Linux `make` command is used to build and maintain groups of programs and files from the source code.
 
-int main() {
-    printf("Hello, world!\n"
-    return 0;
-}
+- `make clean` :Cleans up the project directory by removing generated files.
+
+```markdown {type: code}
+make clean 
 ```
+- `make` : Builds the project according to the instructions in the Makefile.
 
-## Basic coding concepts in C:
-
-### Section 1 : Making Decisions with If or If-Else Statements 
-
-```c
-/*
-   Originally C does not have a boolean data type, and normally uses integers for boolean testing. 
-   Zero is used to represent false 
-   One is used to represent true. 
-   For interpretation, Zero is interpreted as false and anything non-zero is interpreted as true
-*/
-
-int condition = 0; // represent false
-int condition = 1; // represent true
-
-int condition = 9; // anything non-zero is interpreted as true
-
-int condition = 3 < 9; // the value of condition is 1; true
-int condition = 3 > 9; // the value of condition is 0; false
-
-
-if (condition) {
-    // Code to be executed if the condition is true
-}
+```markdown {type: code}
+make
 ```
+- `make run` :  Runs the built executable or launches the application.
 
-```c
-if (condition) {
-    // Code to be executed if the condition is true
-} else {
-    // Code to be executed if the condition is false
-}
+```markdown {type: code}
+make run
 ```
+### Section 4 : Basic Linux Shell Commands
 
-**Example** :
+Here are some Basic Linux shell commands.
 
-```c
-int y = 3;
+1. **pwd**: 
+   - Stands for 'print working directory'.
+   - Displays the full directory path of the current working directory.
+  
+   ```bash
+   pwd
+   ```
 
-if(y) {
-    printf("y is 5,  anything non-zero is interpreted as true\n");
-}
+2. **cd**: 
+   - **cd** is the command for 'change directory'.
+   - **cd ~/** navigates to the user's home directory.
+   - **cd ../** moves up one directory level from the current directory.
+   
+   ```bash
+   cd directory_path
+   ```
 
-if (y > 5) {
-    printf("y is greater than 5\n");
-} else {
-    printf("y is not greater than 5\n");
-}
-```
+3. **mkdir**: 
+   - Short for 'make directory'.
+   - Used to create a new directory in the specified path.
+   
+   ```bash
+   mkdir <directory_name>
+   ```
+4. **rm file and directory**: 
+   - **rm** stands for 'remove'.
+   - Used to delete files and directories.
+   - To remove a directory, the flag **-r** (recursive) is used.
+   
+   ```bash
+   # For a file
+   rm <file_name>
+   
+   # For a directory and its contents
+   rm -r <directory_name>
+   ```
+5. **touch**: 
+   - Used to create a new empty file or update the timestamp of an existing file.
+   
+   ```bash
+   touch newfile.txt
+   ```
 
-### Section 2 : while loop 
 
-```c
-while (condition) {
-    // Code to be executed repeatedly as long as the condition is true
-}
-```
-**Example** :
+6. **ls -l**: 
+   - **ls** is the command to 'list' contents of a directory.
+   - The **-l** option lists files and directories with detailed information 
 
-```c
-int count = 0;
-while (count < 5) {
-    printf("Count: %d\n", count);
-    count++; // shorter for count = count + 1
-}
-```
+   ```bash
+   ls -l
+   ```
+
+7. **echo**: 
+   - **echo** is used to display text or variables to the terminal or to redirect it to a file
+   - The > operator is used for output redirection.If the specified file exists, it will be overwritten with the new output. If the file does not exist, a new file will be created.
+
+   ```bash
+   echo "Additional content" > output.txt
+   ```
+8. **gcc**: 
+   - The `gcc` command is a compiler used in Unix-like operating systems, including Linux, to compile and link C programs.
+   - `source_file` : The C or C++ source code files that you want to compile. 
+   - `-o output_file` : Specifies the name of the output file (executable) that will be generated by the compiler.
+
+   ```bash
+   gcc source_file -o output_file
+   ```
+
+9. **grep**:
+   - `grep`: This is the command itself, used for searching text patterns.
+   - `r`: This option recursively search subdirectories. This means it will search for the specified pattern not only in the current directory (src) but also in all its subdirectories.
+   - `n`: Print line numbers along with the lines containing the matched pattern. 
+
+   ```bash
+   grep -rn "text to search" src
+   ```
+
+
