@@ -153,7 +153,7 @@ void sprite_init(Sprite *thiz, const char *image, Rect* frames, int frameSize)
     thiz->left = 0.0;
     thiz->top = 0.0;
     thiz->scale = 1.0;
-    thiz->angle = 1.0;
+    thiz->angle = 0.0;
 
     Point center = {0};
     thiz->center = center;
