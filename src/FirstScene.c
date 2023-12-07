@@ -8,6 +8,7 @@
 
 // The static keyword indicates that the variable will be initialized by the compiler and it can only be accessed within this file.
 static Sprite *sprite = NULL;
+static Sprite *background = NULL;
 
 // The update event of the scene; this is where all the game animation and logic occur.
 // 'ticks' is the time elapsed per frame, in milliseconds.
@@ -58,6 +59,9 @@ void first_scene_init(FirstScene *thiz)
     // This is done because FirstScene is a child 'class' of Scene, 
     // and we need to operate on it as a Scene.
     Scene *scene = (Scene *)thiz;
+
+    background = new_sprite("background.png");
+    scene->add_child(scene, background);
 
     // Create a new sprite from an image file. 
     // This function returns a pointer to the created sprite.

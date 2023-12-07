@@ -1,5 +1,13 @@
 # Learn the C language by developing your own game
 
+Run shell command below to make c-session-2 folder as a workspace for vs code, then open the project files from VS Code file exploerer's c-session-2 workspace view.
+
+```bash
+cd ~/Workspace/
+code --add c-session-2
+```
+
+
 ### Session 1: Project requirements
 
 1. JuniorIT.AI has prepared AI-generated background and sprite images for you at https://d2sdz7s4ni6kmi.cloudfront.net/juniorit/game-image-template.zip

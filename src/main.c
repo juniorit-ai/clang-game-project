@@ -38,7 +38,7 @@
 
 int main(int argc, char *argv[])
 {
-    int width = 1280;
+    int width = 1200;
     int height = 512;
 
     printf("Game starts; Scene width: %i, height: %i.\n", width, height);
