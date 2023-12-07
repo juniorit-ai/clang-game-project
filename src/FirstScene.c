@@ -32,6 +32,43 @@ void first_scene_on_update(FirstScene *thiz, int ticks)
 
     // Update the sprite's scale periodically to create a heartbeat-like effect.
     sprite->setScale(sprite, scale);
+
+    // Move the sprite from left to right, then flip and move from right to left in the range of the screen (width 1280)
+    float spriteWidth = sprite->width * sprite->scale;
+    float spriteLeft = sprite->left;
+    float spriteRight = spriteLeft + spriteWidth;
+    float screenRight = background->width;
+
+    int speed = 2; 
+
+    if (sprite->flip == FLIP_NONE)
+    {
+        // Move the sprite to the right
+        spriteLeft += speed;
+        spriteRight += speed;
+
+        // Check if the sprite has reached the right end of the screen
+        if (spriteRight >= screenRight)
+        {
+            // Flip the sprite horizontally
+            sprite->setFlip(sprite, FLIP_HORIZONTAL);
+        }
+    }
+    else if (sprite->flip == FLIP_HORIZONTAL)
+    {
+        // Move the sprite to the left
+        spriteLeft -= speed;
+        spriteRight -= speed;
+
+        // Check if the sprite has reached the left end of the screen
+        if (spriteLeft <= 0)
+        {
+            // Flip the sprite back to normal
+            sprite->setFlip(sprite, FLIP_NONE);
+        }
+    }
+
+    sprite->setPosition(sprite, sprite->top, spriteLeft);
 }
 
 
@@ -55,16 +92,13 @@ void first_scene_init(FirstScene *thiz)
     // Ensure that the pointer to the FirstScene instance is not NULL. Or assert() will force the application exit.
     assert(thiz != NULL);
 
-    // Cast the FirstScene instance to a Scene pointer.
-    // This is done because FirstScene is a child 'class' of Scene, 
-    // and we need to operate on it as a Scene.
     Scene *scene = (Scene *)thiz;
 
+    // size - width: 1280, height 512
     background = new_sprite("background.png");
     scene->add_child(scene, background);
 
-    // Create a new sprite from an image file. 
-    // This function returns a pointer to the created sprite.
+    // size - width: 342, height: 218
     sprite = new_sprite("t-rex.png");
 
     // Add the created sprite as a child to the scene.
@@ -72,7 +106,9 @@ void first_scene_init(FirstScene *thiz)
     scene->add_child(scene, sprite);
 
     // Set the sprite's top-left coordinate.
-    sprite->setPosition(sprite, 100, 200);
+    sprite->setPosition(sprite, 250, 20);
+    sprite->setFlip(sprite, FLIP_HORIZONTAL);
+    
 }
 
 // destroy the FirstScene object, you can ingore the code for now

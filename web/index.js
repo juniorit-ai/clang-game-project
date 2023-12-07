@@ -190,7 +190,7 @@ Module['FS_createPath']("/", "res", true, true);
     }
 
     }
-    loadPackage({"files": [{"filename": "/res/background.png", "start": 0, "end": 454827}, {"filename": "/res/t-rex.png", "start": 454827, "end": 512390}], "remote_package_size": 512390});
+    loadPackage({"files": [{"filename": "/res/background.png", "start": 0, "end": 601069}, {"filename": "/res/t-rex.png", "start": 601069, "end": 658632}], "remote_package_size": 658632});
 
   })();
 
