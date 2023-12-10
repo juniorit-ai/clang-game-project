@@ -3,7 +3,7 @@
         {
             "name": "Emscripten",
             "includePath": [
-                "/home/juniorit/workspace/c-session-2/**",
+                "/home/juniorit/workspace/clang-session-2/**",
                 "/home/juniorit/emsdk/upstream/emscripten/cache/sysroot/include"
             ],
             "defines": ["__EMSCRIPTEN__", "_GNU_SOURCE"],
