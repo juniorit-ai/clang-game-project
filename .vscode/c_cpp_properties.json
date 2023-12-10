@@ -3,7 +3,7 @@
         {
             "name": "Emscripten",
             "includePath": [
-                "${workspaceFolder}/**",
+                "/home/juniorit/workspace/clang-session-1/**",
                 "/home/juniorit/emsdk/upstream/emscripten/cache/sysroot/include"
             ],
             "defines": ["__EMSCRIPTEN__", "_GNU_SOURCE"],
