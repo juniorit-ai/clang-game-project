@@ -43,7 +43,7 @@ typedef struct Sprite {
     void (*setPosition)(struct Sprite* thiz, float top, float left);
     void (*setScale)(struct Sprite* thiz, float scale);
     void (*setAngle)(struct Sprite* thiz, float angle);
-    void (*setCener)(struct Sprite* thiz, Point point);
+    void (*setCenter)(struct Sprite* thiz, Point point);
     void (*setFlip)(struct Sprite* thiz, FlipMode Mode);
     void (*setFrame)(struct Sprite* thiz, int frame);
     // ticks - Time elapsed per frame in milliseconds
