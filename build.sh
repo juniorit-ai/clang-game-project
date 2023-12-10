@@ -56,6 +56,8 @@ case $1 in
         ;;
 esac
 
+cp -f .vscode/* ../.vscode/
+
 mkdir -p .build
 
 cd .build/

@@ -6,7 +6,6 @@
 #include <stdio.h>
 #include <math.h>
 
-// The static keyword indicates that the variable will be initialized by the compiler and it can only be accessed within this file.
 static Sprite *sprite = NULL;
 static Sprite *background = NULL;
 
@@ -14,24 +13,17 @@ static Sprite *background = NULL;
 // 'ticks' is the time elapsed per frame, in milliseconds.
 void first_scene_on_update(FirstScene *thiz, int ticks)
 {
-    // Since FirstScene is a derived object, we need to call the parent's event 'scene_on_update' to ensure proper functionality.
-    // Casting 'thiz' from 'FirstScene*' to 'Scene*' changes the pointer type to the parent type.
+   
     scene_on_update((Scene *)thiz, ticks);
 
-    // The static keyword here ensures that 'timeLapse' is initialized by the compiler only once.
-    // As a result, 'timeLapse' will not be reset to 0 on subsequent calls to this function.
     static int timeLapse = 0;
 
-    timeLapse += ticks; // This is equivalent to timeLapse = timeLapse + ticks.
+    timeLapse += ticks; 
 
-    // Mathematical calculation for oscillation. The logic here might be complex, 
-    // but we can ask AI to generate the code easily, ignore the logic if you don't understand for now
-    // it oscillates the scale between 1 and 1.01.
-    float frequency = M_PI / 1000;
-    float scale = 1 + 0.01 * sin(timeLapse * frequency);
+    float frequency = M_PI / 500;
+    float angle = 3 * sin(timeLapse * frequency);
 
-    // Update the sprite's scale periodically to create a heartbeat-like effect.
-    sprite->setScale(sprite, scale);
+    sprite->setAngle(sprite, angle);
 
     // Move the sprite from left to right, then flip and move from right to left in the range of the screen (width 1280)
     float spriteWidth = sprite->width * sprite->scale;
@@ -104,6 +96,9 @@ void first_scene_init(FirstScene *thiz)
     // Add the created sprite as a child to the scene.
     // This step integrates the sprite into the scene so it can be rendered and managed.
     scene->add_child(scene, sprite);
+
+    Point point = {.x = sprite->width/2, .y = sprite->height/2};
+    sprite->setCenter(sprite, point);
 
     // Set the sprite's top-left coordinate.
     sprite->setPosition(sprite, 250, 20);

@@ -137,7 +137,7 @@ void sprite_init(Sprite *thiz, const char *image, Rect* frames, int frameSize)
     thiz->setPosition = sprite_set_Position;
     thiz->setScale = sprite_set_Scale;
     thiz->setAngle = sprite_set_angle;
-    thiz->setCener = sprite_set_center;
+    thiz->setCenter = sprite_set_center;
     thiz->setFlip = sprite_set_flip;
 
     thiz->destroy = sprite_destroy;
