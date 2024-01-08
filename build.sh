@@ -1,5 +1,14 @@
 #!/bin/bash
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
+
+CURRENT_DIR="$(pwd)"
+
+if [ "$SCRIPT_DIR" != "$CURRENT_DIR" ]; then
+    echo "Error: This script must be run from its own directory."
+    exit 1
+fi
+
 get_github_pages_url() {
     # Get the remote URL of the 'origin' remote
     remote_url=$(git remote -v | grep '^origin' | grep '(fetch)' | awk '{print $2}')
@@ -36,15 +45,20 @@ case $1 in
         exit 0
         ;;
     "deploy")
-        cp -f web/* "$GAMECRAFT_PROJECT_PATH/clang/"
-        cd $GAMECRAFT_PROJECT_PATH
-        git add .
-        git commit -a -m "deploy at $(date)"
-        git push
-        echo
-        echo "Your game has been deployed to `get_github_pages_url`, and you can share with your friends now."
-        echo
-        cd -
+        if [ -n "$JUNIORIT_CONTAINER_TOKEN" ] && [ -n "$JUNIORIT_CONTAINER_HOST_PORT" ]; then
+            FROM_PATH=$(pwd | sed 's|/home/juniorit/workspace/||')
+            curl "http://172.17.0.1:$JUNIORIT_CONTAINER_HOST_PORT/publish/?containerToken=$JUNIORIT_CONTAINER_TOKEN&fromPath=$FROM_PATH/web&toPath=clang"
+        else
+            cp -f web/* "$GAMECRAFT_PROJECT_PATH/clang/"
+            cd $GAMECRAFT_PROJECT_PATH
+            git add .
+            git commit -a -m "deploy at $(date)"
+            git push
+            echo
+            echo "Your game has been deployed to `get_github_pages_url`, and you can share with your friends now."
+            echo
+            cd -
+        fi
         exit 0
         ;;
     "submit")
