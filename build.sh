@@ -49,7 +49,7 @@ case $1 in
             FROM_PATH=$(pwd | sed 's|/home/juniorit/workspace/||')
             curl "http://172.17.0.1:$JUNIORIT_CONTAINER_HOST_PORT/publish?containerToken=$JUNIORIT_CONTAINER_TOKEN&fromPath=$FROM_PATH/web&toPath=clang"
             echo
-            echo "Your game has been deployed to $JUNIORIT_CONTAINER_USER_WEBSITE/clang. You can share with your friends now."
+            echo "Your game has been deployed to $JUNIORIT_CONTAINER_USER_WEBSITE/clang/. You can share with your friends now."
         else
             cp -f web/* "$GAMECRAFT_PROJECT_PATH/clang/"
             cd $GAMECRAFT_PROJECT_PATH
