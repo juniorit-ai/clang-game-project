@@ -72,6 +72,7 @@ case $1 in
         ;;
 esac
 
+mkdir -p ../.vscode/
 cp -f .vscode/* ../.vscode/
 
 mkdir -p .build
