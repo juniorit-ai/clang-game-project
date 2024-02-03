@@ -26,12 +26,12 @@ typedef struct Rect {
 
 // Sprite structure 
 typedef struct Sprite {
-    float top;
-    float left;
+    double top;
+    double left;
     int width; // orignal image width
     int height; // orignal image height
-    float scale;
-    float angle;
+    double scale;
+    double angle;
     Point center;
     FlipMode flip;
     bool reDraw;
@@ -40,9 +40,9 @@ typedef struct Sprite {
     int frameSize;
     int frameIndex;
     
-    void (*setPosition)(struct Sprite* thiz, float top, float left);
-    void (*setScale)(struct Sprite* thiz, float scale);
-    void (*setAngle)(struct Sprite* thiz, float angle);
+    void (*setPosition)(struct Sprite* thiz, double top, double left);
+    void (*setScale)(struct Sprite* thiz, double scale);
+    void (*setAngle)(struct Sprite* thiz, double angle);
     void (*setCenter)(struct Sprite* thiz, Point point);
     void (*setFlip)(struct Sprite* thiz, FlipMode Mode);
     void (*setFrame)(struct Sprite* thiz, int frame);

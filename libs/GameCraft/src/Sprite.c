@@ -8,7 +8,7 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 
-void sprite_set_Position(Sprite *thiz, float top, float left)
+void sprite_set_Position(Sprite *thiz, double top, double left)
 {
     thiz->top = top;
     thiz->left = left;
@@ -16,14 +16,14 @@ void sprite_set_Position(Sprite *thiz, float top, float left)
     thiz->reDraw = true;
 }
 
-void sprite_set_Scale(Sprite *thiz, float scale)
+void sprite_set_Scale(Sprite *thiz, double scale)
 {
     thiz->scale = scale;
 
     thiz->reDraw = true;
 }
 
-void sprite_set_angle(Sprite *thiz, float angle)
+void sprite_set_angle(Sprite *thiz, double angle)
 {
     thiz->angle = angle;
 
