@@ -11,13 +11,11 @@
 
 static Game *instance = NULL;
 
-// Function implementations for the Game struct
-void game_init_window(Game *thiz, int width, int height);
 void game_add_scene(Game *thiz, Scene *scene);
 void game_remove_scene(Game *thiz, Scene *scene);
 void game_set_current_scene(Game *thiz, Scene *scene);
 void game_run(Game *thiz);
-void game_init(Game *thiz, int width, int height);
+void game_init(Game *thiz, const char* name, int width, int height);
 
 void game_on_keyboard(Game *thiz, Event event, int keyCode);
 void game_on_mouse(Game *thiz, Event event, Point point);
@@ -165,7 +163,7 @@ Game *game_instance()
 
 // Function to initialize the game instance
 
-void game_init(Game *thiz, int width, int height)
+void game_init(Game *thiz, const char* name, int width, int height)
 {
     assert(thiz != NULL);
     
@@ -178,7 +176,7 @@ void game_init(Game *thiz, int width, int height)
     thiz->width = width;
     thiz->height = height;
 
-    thiz->window = (void *)SDL_CreateWindow("JuniorIT SDL2 Game", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, instance->width, instance->height, SDL_WINDOW_SHOWN);
+    thiz->window = (void *)SDL_CreateWindow(name, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, instance->width, instance->height, SDL_WINDOW_SHOWN);
     assert(thiz->window != NULL);
 
     thiz->renderer = (void *)SDL_CreateRenderer(thiz->window, -1, SDL_RENDERER_ACCELERATED);

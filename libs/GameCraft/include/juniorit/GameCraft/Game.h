@@ -19,7 +19,7 @@ typedef struct Game{
     Scene* currentScene;      // Pointer to the current active scene
 
     // Member function pointers
-    void (*init)(struct Game* thiz, int width, int height);
+    void (*init)(struct Game* thiz, const char* name, int width, int height);
     void (*add_scene)(struct Game* thiz, Scene* scene);
     void (*remove_scene)(struct Game* thiz, Scene* scene);
     void (*set_current_scene)(struct Game* thiz, Scene* scene);
