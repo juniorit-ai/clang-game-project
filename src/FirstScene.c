@@ -6,8 +6,13 @@
 #include <stdio.h>
 #include <math.h>
 
+/*
+The first scene of the game. We will update this file to implement our game logic.
+*/
 static Sprite *sprite = NULL;
 
+
+// The first_scene_on_update function is called by the main game loop every frame, approximately 60 times per second in our game project.
 void first_scene_on_update(FirstScene *thiz, int ticks)
 {
     scene_on_update((Scene *)thiz, ticks);
@@ -36,7 +41,8 @@ void first_scene_init(FirstScene *thiz)
     assert(thiz != NULL);
 
     Scene *scene = (Scene *)thiz;
-
+    
+    // The sprite image is located in the 'res' folder.
     sprite = new_sprite("t-rex.png");
     scene->add_child(scene, sprite);
 
