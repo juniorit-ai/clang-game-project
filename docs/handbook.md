@@ -84,8 +84,32 @@ gcc -o HelloWorld HelloWorld.c // Compiles the code with a specified output name
 ./HelloWorld                    // Executes the compiled program.
 ```
 
+### 4. Output in C
 
-### 4. Comments in C
+Outputting information to the console is essential for debugging and monitoring program execution in C.
+
+**Key Knowledge Points**
+1. `printf` - Equivalent to `fprintf(stdout, ...)`, used for sending formatted output to the screen.
+2. **Standard Output**: `stdout` - Using `fprintf(stdout, ...)` or `printf` for normal output messages.
+3. **Error Output**: `stderr` - Using `fprintf(stderr, ...)` for error messages, outputs immediately as it is unbuffered.
+4. **Escape Sequences**: `\n` - The newline character, used in strings to move the output cursor to the next line.
+
+`stderr` and `stdout` are standard I/O streams in Unix-like operating systems, they behave like file streams within the context of a C program.
+
+**Code Example**
+```c
+#include <stdio.h>
+
+int main() {
+    printf("This will print to standard output.\n"); // Equivalent to fprintf(stdout, "This will print to standard output.\n");
+    fprintf(stdout, "This will print to standard output.\n");
+    fprintf(stderr, "This will print to standard error.\n");
+
+    return 0;
+}
+```
+
+### 5. Comments in C
 Comments are integral for explaining the code, making it more readable and maintainable. They are ignored by the compiler and can also be used for temporarily disabling code.
 
 
